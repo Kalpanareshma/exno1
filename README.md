@@ -26,8 +26,98 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 data = pd.read_csv("/content/SAMPLEIDS.csv")
-data.head(![ds1](https://github.com/Kalpanareshma/exno1/assets/122040453/fe6ec79c-99a5-4ee7-9a03-f886c77db522))
+data.head()
+```
+![ds1](https://github.com/Kalpanareshma/exno1/assets/122040453/f078cf22-2a6b-4655-a82a-2a4894e68017)
+```
+data = pd.get_dummies(data)
+data.isnull().sum()
+```
+![ds2](https://github.com/Kalpanareshma/exno1/assets/122040453/6c5cd81d-9cec-4e63-97ec-5dee5e1575cb)
+```
+columns_with_null = data.columns[data.isnull().any()]
+import seaborn as sns
+plt.figure(figsize=(10,10))
+sns.barplot(columns_with_null)
+plt.title("NULL VALUES")
+plt.show()
+```
+![ds3](https://github.com/Kalpanareshma/exno1/assets/122040453/77679d67-4378-45b2-a61f-f778723f6d4d)
+```
+for column in columns_with_null:
+    median = data[column].median()  
+    data[column].fillna(median, inplace=True)
+data.isnull().sum().sum()
+```
+![ds4](https://github.com/Kalpanareshma/exno1/assets/122040453/ecfa0ada-740f-4aec-9bfa-0e0d1ded38d7)
+#IQR
+```
+import pandas as pd
+import seaborn as sns
+ir = pd.read_csv("/content/iris (1).csv")
+ir.head()
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/a435e325-7337-4220-ae10-d51f5381ddae)
+```
+ir.describe()
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/32410ed8-76e3-4e1c-923e-f6345797a04e)
+```
+sns.boxplot(x='sepal_width',data=ir)
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/362cfcaf-b13a-4b52-b503-cec25494b892)
+```
+c1=ir.sepal_width.quantile(0.25)
+c3=ir.sepal_width.quantile(0.75)
+iq=c3-c1
+print(c3)
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/92a05b8a-3e20-4fd0-9b05-6b32a9692b14)
+```
+rid=ir[((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
+rid['sepal_width']
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/2fe90fd2-38a7-45e5-8f91-3b31b979c7a5)
+```
+delid=ir[~((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
+delid
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/e7495149-035b-4544-9766-8e7371737e12)
+```
+sns.boxplot(x='sepal_width',data=delid)
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/3991c6b2-6efc-4be1-bb7c-a279ce507297)
+#Z Score
+```
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import scipy.stats as stats
+dataset=pd.read_csv("/content/heights.csv")
+dataset
+```
+![image](https://github.com/Kalpanareshma/exno1/assets/122040453/21af3c8c-f10f-449f-a596-3dd4c981ed94)
+```
+df = pd.read_csv("heights.csv")
+q1 = df['height'].quantile(0.25)
+q2 = df['height'].quantile(0.5)
+q3 = df['height'].quantile(0.75)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Result
-          <<include your Result here>>
+         Thus the given data is read,cleansed and the cleaned data is saved into the file.
