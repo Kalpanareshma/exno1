@@ -26,8 +26,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 data = pd.read_csv("/content/SAMPLEIDS.csv")
-data.head()
-![ds1](https://github.com/Kalpanareshma/exno1/assets/122040453/19a7f127-c403-43bf-8f79-05d9765a4ce9)
+data.head(![ds1](https://github.com/Kalpanareshma/exno1/assets/122040453/fe6ec79c-99a5-4ee7-9a03-f886c77db522))
+
 
 # Result
           <<include your Result here>>
