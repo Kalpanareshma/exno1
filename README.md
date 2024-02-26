@@ -50,6 +50,7 @@ for column in columns_with_null:
 data.isnull().sum().sum()
 ```
 ![ds4](https://github.com/Kalpanareshma/exno1/assets/122040453/ecfa0ada-740f-4aec-9bfa-0e0d1ded38d7)
+
 #IQR
 ```
 import pandas as pd
