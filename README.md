@@ -51,7 +51,7 @@ data.isnull().sum().sum()
 ```
 ![ds4](https://github.com/Kalpanareshma/exno1/assets/122040453/ecfa0ada-740f-4aec-9bfa-0e0d1ded38d7)
 
-#IQR
+# IQR
 ```
 import pandas as pd
 import seaborn as sns
@@ -88,7 +88,7 @@ delid
 sns.boxplot(x='sepal_width',data=delid)
 ```
 ![image](https://github.com/Kalpanareshma/exno1/assets/122040453/3991c6b2-6efc-4be1-bb7c-a279ce507297)
-#Z Score
+# Z Score
 ```
 import matplotlib.pyplot as plt
 import pandas as pd
